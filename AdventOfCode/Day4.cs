@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode
 {
-    public class Day4
+    public static class Day4
     {
         public static void Run()
         {
@@ -36,7 +36,7 @@ namespace AdventOfCode
             Console.WriteLine(validCount);
         }
 
-        class Passport
+        private class Passport
         {
             public static readonly string[] RequiredFields = new[]
             {
@@ -72,7 +72,7 @@ namespace AdventOfCode
                     return false;
                 if (!Regex.IsMatch(Fields["hcl"], @"^#[\da-f]{6}$"))
                     return false;
-                if (!Regex.IsMatch(Fields["ecl"], @"^(amb|blu|brn|gry|grn|hzl|oth)$"))
+                if (!Regex.IsMatch(Fields["ecl"], "^(amb|blu|brn|gry|grn|hzl|oth)$"))
                     return false;
                 if (!Regex.IsMatch(Fields["pid"], @"^\d{9}$"))
                     return false;

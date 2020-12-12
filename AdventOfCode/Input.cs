@@ -12,6 +12,6 @@ namespace AdventOfCode
             var filename = $"{day.ToLower()}_input.txt";
             return File.ReadAllLines(filename);
         }
-        
+       
     }
 }

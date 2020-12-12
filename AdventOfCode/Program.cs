@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode
 {
-    class Program
+    internal static class Program
     {
-        static async Task Main(string[] args)
+        private static void Main()
         {
-            Day7.Run();
+            Day12.Run();
         }
     }
 }

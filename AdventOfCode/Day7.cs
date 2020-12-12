@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode
 {
-    public class Day7
+    public static class Day7
     {
         public static void Run()
         {
@@ -31,7 +30,6 @@ namespace AdventOfCode
             //    "dark violet bags contain no other bags."
             //};
 
-
             var bags = bagdefs.Select(Bag.Parse).ToList();
 
             var bagDict = bags.ToDictionary(bag => bag.Name);
@@ -53,14 +51,6 @@ namespace AdventOfCode
             Traverse(start, roots);
 
             var count = start.GetNumberOfBags();
-
-        }
-
-        public static int CountBags(Bag bag, int depth)
-        {
-
-
-            return 0;
         }
 
         public static void Traverse(Bag bag, List<string> roots)

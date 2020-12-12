@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AdventOfCode
 {
-    class Day6
+    internal static class Day6
     {
         public static void Run()
         {
@@ -31,7 +31,7 @@ namespace AdventOfCode
                 {
                     var x = group.Count(l => l == letter);
                     if (x == count)
-                        groupSum += 1;
+                        groupSum++;
                 }
 
                 total += groupSum;
