@@ -1,14 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace AdventOfCode
+﻿namespace AdventOfCode
 {
     internal static class Program
     {
         private static void Main()
         {
-            Day12.Run();
+            Day14.Run();
         }
     }
 }

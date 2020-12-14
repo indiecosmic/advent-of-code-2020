@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace AdventOfCode
 {
-    static internal class Day1
+    internal static class Day1
     {
         public static void RunAsync()
         {

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode
@@ -38,7 +37,7 @@ namespace AdventOfCode
 
         private class Passport
         {
-            public static readonly string[] RequiredFields = new[]
+            private static readonly string[] RequiredFields = new[]
             {
                 "byr",
                 "iyr",
@@ -50,7 +49,7 @@ namespace AdventOfCode
                 // "cid" (Country ID)"
             };
 
-            public Dictionary<string, string> Fields = new Dictionary<string, string>();
+            public readonly Dictionary<string, string> Fields = new Dictionary<string, string>();
 
             public bool IsValid()
             {
