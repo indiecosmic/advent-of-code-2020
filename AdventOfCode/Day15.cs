@@ -17,33 +17,32 @@ namespace AdventOfCode
             var time = System.Diagnostics.Stopwatch.StartNew();
             result = GetNthNumberSpoken(startingNumbers, 30000000);
             time.Stop();
-            Console.WriteLine(result.ToString() + time);
+            Console.WriteLine(result.ToString() +" "+ time.Elapsed);
         }
 
         public static int GetNthNumberSpoken(int[] startingNumbers, int n)
         {
-            var spokenNumbers = new Dictionary<int, List<int>>();
+            var spokenNumbers = new Dictionary<int, int[]>();
             for (var i = 0; i < startingNumbers.Length; i++)
             {
-                spokenNumbers.Add(startingNumbers[i], new List<int>(new []{i}));
+                spokenNumbers.Add(startingNumbers[i], new []{-1, i});
             }
             
             var lastNumber = startingNumbers[^1];
             for (var i = startingNumbers.Length; i < n; i++)
             {
-                var numberToSpeak = spokenNumbers[lastNumber].Count < 2
+                var numberToSpeak = spokenNumbers[lastNumber][0] == -1
                     ? 0
                     : spokenNumbers[lastNumber][^1] - spokenNumbers[lastNumber][^2];
 
                 if (!spokenNumbers.ContainsKey(numberToSpeak))
                 {
-                    spokenNumbers.Add(numberToSpeak, new List<int>(new[] { i }));
+                    spokenNumbers.Add(numberToSpeak, new[] {-1, i });
                 }
                 else
                 {
-                    if (spokenNumbers[numberToSpeak].Count == 2)
-                        spokenNumbers[numberToSpeak].RemoveAt(0);
-                    spokenNumbers[numberToSpeak].Add(i);
+                    spokenNumbers[numberToSpeak][0] = spokenNumbers[numberToSpeak][1];
+                    spokenNumbers[numberToSpeak][1] = i;
                 }
 
                 lastNumber = numberToSpeak;
