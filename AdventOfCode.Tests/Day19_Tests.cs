@@ -114,8 +114,19 @@ namespace AdventOfCode.Tests
             rules[4] = "11: 42 31 | 42 11 31";
             rules[26] = "8: 42 | 42 8";
 
-            actual = Day19.ValidateMessages(rules, messages);
-            Assert.Equal(11, actual);
+            var r = Day19.CreateRules(rules);
+
+            var x = Day19.Rule.Parse("11: 42 31 | 42 11 31");
+            
+            
+            var count = 0;
+            foreach (var message in messages)
+            {
+                var variants = Day19.GenerateVariants(0, r, message);
+                if (variants.Contains(message))
+                    count++;
+            }
+            Assert.Equal(12, count);
         }
     }
 }

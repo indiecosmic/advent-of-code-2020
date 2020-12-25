@@ -2,7 +2,7 @@ using Xunit;
 
 namespace AdventOfCode.Tests
 {
-    public class UnitTest1
+    public class Day14_Tests
     {
         [Fact]
         public void ShouldApplyMask()

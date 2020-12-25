@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace AdventOfCode
 {
@@ -6,8 +7,7 @@ namespace AdventOfCode
     {
         private static void Main()
         {
-            Console.WriteLine(Day25.Part1());
-            
+            Console.WriteLine(Day19.Part2());
         }
     }
 }
