@@ -1,10 +1,13 @@
-﻿namespace AdventOfCode
+﻿using System;
+
+namespace AdventOfCode
 {
     internal static class Program
     {
         private static void Main()
         {
-            Day24.Run();
+            Console.WriteLine(Day25.Part1());
+            
         }
     }
 }
